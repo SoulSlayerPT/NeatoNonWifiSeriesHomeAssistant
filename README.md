@@ -7,15 +7,18 @@ ESP8266 Wifi to Connect Neato Non Wifi Series to Home Assistant
 - ESP8266 NodeMCU V3
 - Neato Vaccum
 - Home assistant
+- FTDI
 
 ### Setup Hardware:
 
-I used dupont wires with connectors and soldered them to Neato serial port then connected to NodeMCU pins
+I used dupont wires with connectors and soldered them to Neato serial port then connected to NodeMCU pins. Place the MCU with tape in any place you can fit it inside the neato
+
 Neato will supply the NodeMCU V3 Module
-TX Neato -> RX NodeMCU
-RX Neato -> TX NodeMCU
-3V3 Neato -> 3V3 NodeMCU
-GND Neato -> GND NodeMCU
+
+* TX Neato -> RX NodeMCU
+* RX Neato -> TX NodeMCU
+* 3V3 Neato -> 3V3 NodeMCU
+* GND Neato -> GND NodeMCU
 
 ### Setup Software:
 
@@ -37,6 +40,7 @@ Can also debug the MQTT messages for example with chrome app MQTTLens
 
 ### Setup Home assistant:
 
+```yaml
 vacuum:
   - platform: mqtt
     name: "YOURNEATO"
@@ -63,3 +67,4 @@ vacuum:
     availability_topic: "neato/available"
     payload_available: "online"
     payload_not_available: "offline"
+```
