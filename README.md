@@ -20,6 +20,8 @@ Neato will supply the NodeMCU V3 Module
 * 3V3 Neato -> 3V3 NodeMCU
 * GND Neato -> GND NodeMCU
 
+![Neato Serial Connector](https://github.com/SoulSlayerPT/NeatoNonWifiSeriesHomeAssistant/raw/master/images/pins.jpg)
+
 ### Setup Software:
 
 ESP8266 NodeMCU side:
