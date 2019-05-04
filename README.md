@@ -1,6 +1,8 @@
 # Neato Non Wifi Series Connect to Home Assistant
 ESP8266 Wifi to Connect Neato Non Wifi Series to Home Assistant
 
+With Home Assistant you can also setup schedules with automations
+
 ## Requirements:
 
 ### What you need:
