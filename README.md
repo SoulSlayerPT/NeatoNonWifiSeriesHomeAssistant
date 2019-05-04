@@ -26,13 +26,13 @@ ESP8266 NodeMCU side:
 
 Use arduino IDE with NeatoNonWifiHA.ino and edit your wifi SSID and password:
 
-const char* ssid = "YOURWIFISSID";
-const char* password = "YOURWIFIPASSWORD";
+* const char* ssid = "YOURWIFISSID";
+* const char* password = "YOURWIFIPASSWORD";
 
 Edit your MQTT Server, username and password:
-#define MQTT_SERVER "MQTTSERVERIP"
-#define MQTT_USER "MQTTUSERNAME"
-#define MQTT_PASSWORD "MQTTPASSWORD"
+* #define MQTT_SERVER "MQTTSERVERIP"
+* #define MQTT_USER "MQTTUSERNAME"
+* #define MQTT_PASSWORD "MQTTPASSWORD"
 
 Upload the file to the neato then you can upload future versions by OTA
 
