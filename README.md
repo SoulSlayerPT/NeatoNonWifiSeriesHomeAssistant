@@ -8,12 +8,12 @@ With Home Assistant you can also setup schedules with automations
 ### What you need:
 - ESP8266 NodeMCU V3
 - Neato Vaccum
-- Home assistant
+- Home Assistant setup
 - FTDI
 
 ### Setup Hardware:
 
-I used dupont wires with connectors and soldered them to Neato serial port then connected to NodeMCU pins. Place the MCU with tape in any place you can fit it inside the neato
+I used dupont wires with connectors and soldered them to Neato serial port then connected to NodeMCU pins. Place the MCU with tape in any place you can fit it inside the Neato
 
 Neato will supply the NodeMCU V3 Module
 
@@ -47,10 +47,11 @@ Can also debug the MQTT messages for example with chrome app MQTTLens
 ```yaml
 vacuum:
   - platform: mqtt
-    name: "YOURNEATO"
+    unique_id: unique_id__neato_botvac_wifi
+    schema: state
+    name: Neato Wifi
     supported_features:
-      - turn_on
-      - turn_off
+      - start
       - pause
       - stop
       - battery
@@ -59,16 +60,7 @@ vacuum:
       - clean_spot
       - send_command
     command_topic: "neato/command"
-    battery_level_topic: "neato/state"
-    battery_level_template: "{{ value_json.battery_level }}"
-    charging_topic: "neato/state"
-    charging_template: "{{ value_json.charging }}"
-    cleaning_topic: "neato/state"
-    cleaning_template: "{{ value_json.cleaning }}"
-    docked_topic: "neato/state"
-    docked_template: "{{ value_json.docked }}"
-    send_command_topic: 'neato/send_command'
+    state_topic: "neato/state"
+    send_command_topic: "neato/send_command"
     availability_topic: "neato/available"
-    payload_available: "online"
-    payload_not_available: "offline"
 ```
